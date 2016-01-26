@@ -1,0 +1,236 @@
+@import "compass";
+@mixin striped-bg($bg-color: #ccc, $darken-amount: 5%, $stripe-color: darken($bg-color, $darken-amount)){
+background-color: $bg-color;
+@include background-image(linear-gradient(-45deg, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent));
+@include background-size(40px 40px);
+}
+
+
+@font-face {
+    font-family: 'chino';
+    src: url('../fonts/chinesetakeaway-webfont.eot');
+    src: url('../fonts/chinesetakeaway-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chinesetakeaway-webfont.woff2') format('woff2'),
+         url('../fonts/chinesetakeaway-webfont.woff') format('woff'),
+         url('../fonts/chinesetakeaway-webfont.ttf') format('truetype'),
+         url('../fonts/chinesetakeaway-webfont.svg#chino') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body {
+    min-height: 100%;
+    font-family: 'chino';
+    color: #fff;
+    font-size: 22px;
+    @include scale(0.93);
+    margin: 0;
+    padding: 0;
+
+}
+// @import "media-queries";
+html{
+    @include background-image(radial-gradient(top, rgb(204,29,5) 0%, rgb(109,12,0) 100%));
+    background-image: url(../img/fondo.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    background-position: bottom center;
+}
+#years{
+    padding: 20px 100px ;
+    li{
+        display: inline-block;
+        width: 72px;
+        padding: 8px 4px;
+        line-height: 2em;
+        border:1px solid #8b2113;
+        font-size: .9em;
+        text-align: center;
+        margin:7px 5px;
+        background-color: rgba(115,13,0,.7);
+        @include transition (all .4s ease-in-out);
+        @include text-shadow(0 2px 2px rgba(0,0,0,1));
+        @include border-radius(4px);
+        &:hover{
+            @include scale (2);
+            @include box-shadow (0 10px 5px rgba(0,0,0,.5));
+            @include transition (all .4s ease-in-out);
+            background-color: #FFF;
+            a{
+                color:#a11503;
+                @include text-shadow(0 2px 2px rgba(0,0,0,0));
+            }
+        }
+        a{
+            @include transition (all .4s ease-in-out);
+            color: #c54130;
+            display: block;
+            text-decoration: none;
+        }
+    }
+}
+h1{
+    text-align: center;
+    font-size: 2.4em;
+    line-height: 1.2em;
+    width: 50%;
+    color: #4b0000;
+    margin: 0px auto;
+    @include text-shadow(0 2px 8px #b81904);
+}
+h2{
+    font-family: 'chino';
+    letter-spacing: 1px;
+    font-weight: 100;
+    font-size: 1.8em;
+    color: #a11503;
+}
+.container{
+    width: 860px;
+    height: 540px;
+    background-image: url("../img/cuadro_centro.png");
+    @include background-size(100% auto);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    &:after{
+        content:" ";
+        display: block;
+        width: 70px;
+        height: 680px;
+        position: absolute;
+        top: -80px;
+        left: -42px;
+        background-image: url("../img/cuadro_der.png");
+        background-repeat: no-repeat;
+        @include background-size(100% auto);
+    }
+    &:before{
+        content:" ";
+        display: block;
+        width: 70px;
+        height: 680px;
+        position: absolute;
+        top: -80px;
+        right: -42px;
+        background-image: url("../img/cuadro_izq.png");
+        background-repeat: no-repeat;
+        @include background-size(100% auto);
+    }
+    .sec{
+        position: relative;
+        top: 40px;
+        width: 96%;
+        margin:0 auto;
+        padding: 0 0;
+        color: #000;
+        img{
+            width: 95%;
+            height: auto;
+            @include transition (all 1s ease-in-out);
+        }
+        div{
+            background-color: rgba(255,255,255,0);
+            @include transition (all 0.6s ease-in-out);
+            display: inline-block;
+            width: 32%;
+            vertical-align: top;
+            position: relative;
+            height: 440px;
+            p{
+                font-family: Sans-Serif;
+                font-size: .8em;
+                background-color: #f6e7c3;
+                padding:5px
+            }
+            h2{
+                position: absolute;
+                bottom:-30px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+            h4{
+                font-size: 1.1em;
+                margin: 20px auto 50px;
+            }
+            h2, h4{
+                font-weight: lighter;
+                color: #f6e7c3;
+                @include opacity(1);
+            }
+            &:hover{
+                @include scale(1.1);
+                h4{ @include opacity(0)}
+                img{@include scale(1.4);}
+            }
+        }
+    }
+}
+.cont{
+    width: 860px;
+    margin: 0 auto;
+    h4{
+        text-align: center;
+        color: #f6e7c3;
+        font-size: 1.4em;
+        letter-spacing: 1px;
+    }
+    p{
+        color: #f6e7c3;
+        font-family: Sans-Serif;
+        font-size:  .88em;
+        line-height: 1.3em;
+        @include text-shadow(0 2px 2px rgba(0,0,0,.9));
+    }
+    .sign{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+    .simb{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+}
+
+
+#compartir{
+    background-image: url("../img/compartir.png");
+    background-repeat: no-repeat;
+    @include background-size(100% auto);
+    background-position: center center;
+    width: 550px;
+    height: 200px;
+    line-height: 190px;
+    color:#ffb400;
+    margin: 0 auto;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    z-index: 10000;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-align: center;
+    @include transition (all 0.4s ease-in-out);
+    &:hover{
+        @include scale(1.2);
+    }
+
+}
+#back{
+    color: #f6e7c3;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    width: 100%;
+    margin: 1em auto;
+    left: 42%;
+    position: relative
+}
+
